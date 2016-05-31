@@ -11,22 +11,6 @@ PostgreSQL Database API for maps and visualizations using PostGIS, NodeJS, and E
 
 Imagine you want to make a web-based map from data you have stored in an in-house database. The dataset is really big, meaning you can't show it all at once or you will crash your browser, and you don't feel comfortable putting it onto CartoDB, like we went over in the previous session. There are a couple of ways to do this. One, you can use PHP, but that can be alot of work. Two, you could use NodeJS and set up your server to run JavaScript! Node will run on your server, meaning queries will be really fast, you can pass variables and data from the client to the server and back again, and you won't be exposing your credentials to the client. This exercise will set up a rudimentary service using Express, a NodeJS Framework, that you can expand to your own application.
 
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-6">
-
-<div class="align-center">[![](/_assets/img/nodejs-logo.png)](https://nodejs.org/en/)</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="align-center">[![](/_assets/img/postgis-logo.png)](http://postgis.net/)</div>
-
-</div>
-
-</div>
-
 #### Working with a PostGIS/NodeJS/Express/Leaflet Stack
 
 _**What?**_ Set up a Leaflet map or D3 visualization to run from dynamically delivered data.
@@ -51,16 +35,6 @@ Open up QGIS and connect to your local instance of Postgres.
 Load **cambridge_coffee_shops** into PostGIS. The recommended route for this is to load your data into QGIS, save a copy of your dataset in WGS84 coordinate system, the use the **Database Manager** to import your data into PostGIS.
 
 Create a table in your database called **cambridge_coffee_shops**. The following will be built off of this database table as an example.
-
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-10 col-md-offset-1">
-
-<div class="align-center">![](/_assets/img/cambridge-coffee-shop-screeny.png)</div>
-
-</div>
-
-</div>
 
 For more detailed instructions on loading data, see the Setting up PostGIS tutorial. **_Coming Soon._**
 
@@ -89,16 +63,6 @@ Try a basic node tutorial to see how this works, if you are curious. Some of the
 *   [NodeJS on Google Cloud Tutorials](https://cloud.google.com/nodejs/)
 
 ### 3\. Install Express Framework
-
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-6 col-md-offset-3">
-
-<div class="align-center">[![](/_assets/img/expressjs-logo.png)](http://expressjs.com/)</div>
-
-</div>
-
-</div>
 
 ExpressJS is a framework package that streamlines the NodeJS development process and provides a ‘server-like’ setup on the backend. When we say "framework", think along the lines of Wordpress, but for application development. It will create a folder template for us to use, set up our Node server and JavaScript files for us, and give us a location in which we can create content. We can then go in and customize as we see fit for our application.
 
@@ -191,16 +155,6 @@ npm start
 
 Navigate then to [http://localhost:3000](http://localhost:3000). You should see a page that looks like the following. If so, you are in business and we have a working application!
 
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-6 col-md-offset-3">
-
-<div class="align-center">![](/_assets/img/express_screeny.png)</div>
-
-</div>
-
-</div>
-
 Stop your Node Server in terminal using **CTRL-C**.
 
 Now, let's connect to our data and make a map.
@@ -283,16 +237,6 @@ npm start
 
 Navigate in your browser to [http://localhost:3000/data](http://localhost:3000/data) and you should see the following.
 
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-6 col-md-offset-3">
-
-<div class="align-center">![](/_assets/img/data-api-screeny.png)</div>
-
-</div>
-
-</div>
-
 It is a GeoJSON of our **cambridge_coffee_shops** table!
 
 **Ctrl-C** to stop your server, now we can create the map of the this data.
@@ -371,16 +315,6 @@ and we have started up our application!
 
 Navigate in your browser to [http://localhost:3000/map](http://localhost:3000/map). You should see our map... and our dataset!
 
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-10 col-md-offset-1">
-
-<div class="align-center">![](/_assets/img/map-screeny.png)</div>
-
-</div>
-
-</div>
-
 **CTRL-C** to stop your server.
 
 ### 10\. Add Data Filtering
@@ -455,33 +389,12 @@ Again, this is similar to the other requests, hoever this time, we want a new qu
 
 Save your **index.js** file, and use **npm start** to start up your app again. You should see the following, with an dropdown form and submit at the top. Change the dropdown to **'Starbucks'** and hit submit. It will run the 'filter' request, returning your map with only the selected coffee shops!
 
-<div class="row" style="margin-top: 30px;">
-
-<div class="col-md-10 col-md-offset-1">
-
-<div class="align-center">![](/_assets/img/filter-screeny.png)</div>
-
-</div>
-
-</div>
-
-Consider some next steps to expand this!
-
-Check out our Leaflet map built with PostGIS/NodeJS/Express!
+Consider some next steps to expand this and check out our Leaflet map built with PostGIS/NodeJS/Express!
 
 ### Next Steps
 
 This example is rudimentary, for sure, but you can see the value of using NodeJS and Express, along with PostGIS, in conjunction with Leaflet for web mapping. If you have a really big dataset, you only want to pass pieces of it to the client, not all of it. This can be a way that you can connect to big datasets and then filter.
 
 A copy of all of the [source code for this project is on Github](https://github.com/mjfoster83/web-map-workshop "Workshop Materials") in the Web Map Workshop repository, along with a JSON of the dataset.
-
-#### Challenges
-
-Things to try:
-
-*   Make the app more robust and adjusting the input to account for a wider variety of inputs, or set up the method that forces the user into a specific set of responses.
-*   Add polygons and lines to the dataset, and add multiple layers.
-*   Experiment with how you can parse and process input data from the user, create a data collection application.
-*   Add additional pages to your application.
 
 </div>
