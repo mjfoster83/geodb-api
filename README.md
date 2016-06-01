@@ -153,7 +153,7 @@ To test your application, in your project folder (i.e. the base level that conta
 npm start
 ```
 
-Navigate then to [http://localhost:3000](http://localhost:3000). You should see a page that looks like the following. If so, you are in business and we have a working application!
+Navigate then to [http://localhost:3000](http://localhost:3000). You should see a basic 'Welcome to Express' page. If so, you are in business and we have a working application!
 
 Stop your Node Server in terminal using **CTRL-C**.
 
