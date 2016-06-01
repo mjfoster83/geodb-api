@@ -1,4 +1,4 @@
-# dbgeo-simple-api
+# geodb-simple-api
 PostgreSQL Database API for maps and visualizations using PostGIS, NodeJS, and Express
 
 # Leaflet with PostGIS, NodeJS, and Express
